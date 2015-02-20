@@ -83,8 +83,19 @@ public class MergeSort {
   * @return A list representing a sorted version of list that was passed in.
   */
  public static ArrayList<String> mergeSort(ArrayList<String> list) {
-
+   if(list.size()<=1)
+   {return list;}
+   else 
+   {
+     ArrayList<String> left= new ArrayList<String> (list.subList(0, list.size()/2));
+     ArrayList<String> right=new ArrayList<String> (list.subList(list.size()/2, list.size()));
+     mergeSort(left);
+     mergeSort(right);
+     return merge(list, left, right);
+   }
  }
+
+ 
  
  /**
   * Merge the left and right lists together in sorted order.
@@ -93,7 +104,23 @@ public class MergeSort {
   * @param rightList The second list to be merged.
   * @return A single list by merging the two parameters in sorted order.
   */
- private static ArrayList<String> merge(ArrayList<String> leftList, ArrayList<String> rightList) {
+ private static ArrayList<String> merge(ArrayList<String> result, ArrayList<String> left, ArrayList<String> right) {
+   int i1=0;
+   int i2=0;
+   for(int i=0; i<result.size(); i++)
+   {
+     if(i2>=right.size() || (i1<left.size() && (left.get(i1).compareTo(right.get(i2))<0)))
+     {
+       result.set(i, left.get(i1));
+       i1++;
+     }
+     else
+     {
+       result.set(i, right.get(i2));
+       i2++;
+      }
+}
+   return result;
    
  }
 
