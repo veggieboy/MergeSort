@@ -15,9 +15,9 @@ You should follow the pseudocode linked above. To summarize:
 - Merge the the two lists and return the result.
  
 ## merge()
-This method will return a merged version of the two lists that are passed in, by removing elements from those lists to build up a sorted, single merged list.
+This method will return a merged and sorted version of the two lists that are passed in, by removing elements from those lists to build up a sorted, single merged list.
 - Create an ArrayList to hold the return value.
-- Loop as long both the first list and second list have elements in them (Which loop would be best for this?)
+- Loop as long as both the first list and second list have elements in them (Which loop would be best for this?)
   - If the first element in the first list is smaller than the first element in the second list, remove the first element from the first list and add it to the results list (Remember how we compare Strings! We can't use <=)
   - Otherwise, remove the first element from the second list and add it to the results list.
 - At this point, there might be a few elements in one of the lists (since one will probably empty out before the other). So, we need to make sure we add all the remaining elements from each list to the results.
@@ -26,7 +26,7 @@ This method will return a merged version of the two lists that are passed in, by
 - Return the results list.
 
 ## How do I know when I'm done?
-When you run the program, it will call your mergeSort method to search a large dictionary of words, and then use Binary Search and Sequential Search (remember?) to look up words in the sorted dictionary, recording the number of loop iterations it took to find the element. You will know everything is done correctly when:
+When you run the program, it will call your mergeSort method to sort a large dictionary of words, and then use Binary Search and Sequential Search (remember?) to look up words in the sorted dictionary, recording the number of loop iterations it took to find the element. You will know everything is done correctly when:
 - The program actually runs and exits, and doesn't loop forever.
 - None of the results show -1 for the "index" column.
 - The "index" column in the output is in ascending order. The program looks for words in lexicographical order, so if you sorted the dictionary correctly, the indexes of the words in the sorted dictionary list will be in ascending order. (Why?)
