@@ -1,2 +1,2 @@
 # MergeSort
-Implement Selection Sort and Merge Sort methods
+Implement Merge Sort method
